@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>BOOKI.com</title>
+    </head>
+    
+    <body>
+
+        <form action="submit_index.html" method="POST">
+
+            <input type="hidden" name="csrf_token" value="1234567890">
+
+            <div>
+
+                <label for="UN">
+
+                    Username
+
+                    <br>
+
+                    <input id="UN" type="text" placeholder="4-12 characters" required name="username" minlength="4" maxlength="12">
+
+                </label>
+
+            </div>
+
+            <hr>
+
+            <div>
+
+                <label for="MB">
+
+                    Mobile
+
+                    <br>
+
+                    <input id="MB" type="tel" placeholder="UR phone number" name="phoneN" pattern="07[0-9]{9}" title="Enter number start with 07 and 9 numbers after it">
+
+                </label>
+
+            </div>
+
+            <hr>
+            
+            <div>
+
+                <label for="EM">
+
+                    Email
+                    
+                    <br>
+                    
+                    <input id="EM" type="email" placeholder="Enter ur Email" required name="Email">
+                
+                </label>
+            
+            </div>
+            
+            <hr>
+            
+            <div>
+                
+                <label for="SUB">
+                    
+                    Subject
+                    
+                    <br>
+                    
+                    <input id="SUB" type="text" placeholder="Subject" required name="SUBJECT">
+                
+                </label>
+            
+            </div> 
+            
+            <br>
+            
+            <div>
+                
+                <label for="SUBR">
+                    
+                    RATE the SUB
+                    
+                    <input id="SUBR" type="range" name="RATE" min="0" max="500" step="100" value="400">
+                
+                </label>
+            
+            </div>
+
+            <br>
+
+        <input type="reset" name="Empty Form" value="Reset">
+
+        <input type="submit" name="Send Data" value="Send">
+
+        </form>
+
+    </body>
+
+</html>
+
+<!-- 
+ mission 07 completed
+ status: done
+ Errors found: 0
+ Errors fixed: 0
+ Lessons learned:
+ - the name attribute should be chosen carefully because its the key to access data at the server side in the BCEND
+ - pattern attribute is used with types like text, search, url, tel, email, and password.
+-->
