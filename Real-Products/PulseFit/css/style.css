@@ -1,0 +1,626 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+   display: grid;
+   grid-template-columns: 180px repeat(3, minmax(120px, 1fr)) 150px;
+
+   align-items: center;
+
+   direction: ltr;
+
+   height: 90px;
+   padding: 0 20px;
+   margin-bottom: 20px;
+
+   background-color: rgba(83, 88, 83, 0.75);
+   backdrop-filter: blur(12px);
+
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+
+   border-bottom: 2px solid var(--accent-color);
+   border-radius: 0 0 10px 10px;
+
+   box-shadow:
+      0 0 30px var(--accent-color),
+      inset 0 -25px 20px -20px var(--accent-color);
+
+   animation: glow 3s infinite alternate;
+}
+
+
+/* =========================
+   GLOW ANIMATION
+========================= */
+
+@keyframes glow {
+   from {
+      box-shadow:
+         0 0 25px var(--accent-color),
+         inset 0 -20px 15px -15px var(--accent-color);
+   }
+
+   to {
+      box-shadow:
+         0 0 35px var(--accent-color),
+         inset 0 -25px 20px -20px var(--accent-color);
+   }
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+   grid-column: 1;
+
+   position: relative;
+
+   display: flex;
+   align-items: center;
+
+   justify-self: center;
+
+   font-size: 1.6rem;
+   font-weight: 800;
+   letter-spacing: 0.5px;
+
+   color: var(--text-main);
+   text-shadow: 0 0 3.3px var(--text-main);
+
+   cursor: pointer;
+
+   right: 20px;
+}
+
+
+/* Pulse */
+.logo > span:first-child {
+   color: var(--accent-color);
+
+   font-size: 2rem;
+   line-height: 1;
+
+   letter-spacing: -0.5px;
+   padding: 2px;
+
+   text-shadow: 0 0 3px var(--accent-color);
+}
+
+
+/* =========================
+   LOGO DIVIDER
+========================= */
+
+.logo .divider {
+   position: absolute;
+
+   right: -50px;
+   top: 50%;
+
+   width: 2px;
+   height: 85px;
+
+   transform: translateY(-50%);
+
+   background-color: var(--accent-color);
+
+   box-shadow: 0 0 8px 2px var(--accent-color);
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar nav {
+   grid-column: 2 / 5;
+
+   width: 100%;
+   height: 100%;
+}
+
+
+.navbar nav .nav-links {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+
+   width: 100%;
+   height: 100%;
+
+   margin: 0;
+   padding: 0;
+
+   direction: rtl;
+}
+
+
+/* =========================
+   NAV ITEMS
+========================= */
+
+.nav-links li {
+   position: relative;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   list-style: none;
+}
+
+
+/* =========================
+   NAV DIVIDERS
+========================= */
+
+.nav-links li:not(:last-child)::after {
+   content: "";
+
+   position: absolute;
+
+   left: 0;
+   top: 50%;
+
+   width: 2px;
+   height: 85px;
+
+   transform: translateY(-50%);
+
+   background-color: var(--accent-color);
+
+   box-shadow: 0 0 8px 2px var(--accent-color);
+}
+
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.navbar nav .nav-links a {
+   width: 100%;
+   height: 70px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   position: relative;
+
+   padding: 6px 0;
+
+   font-size: 0.95rem;
+   font-weight: 500;
+
+   text-align: center;
+}
+
+
+.nav-links a:hover {
+   color: var(--text-main);
+}
+
+
+/* =========================
+   UNDERLINE
+========================= */
+
+.nav-links a::after {
+   content: "";
+
+   position: absolute;
+
+   bottom: 0;
+   left: 50%;
+
+   width: 0;
+   height: 4px;
+
+   background-color: var(--accent-color);
+
+   border-radius: 2px;
+
+   box-shadow: 0 0 8px var(--accent-color);
+
+   transform: translateX(-50%);
+
+   transition: width 0.3s ease;
+}
+
+
+.nav-links a:hover::after {
+   width: 90%;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.navbar .nav-actions {
+   grid-column: 5;
+
+   position: relative;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+
+/* Divider before login */
+.nav-actions::before {
+   content: "";
+
+   position: absolute;
+
+   left: -1px;
+   top: 50%;
+
+   width: 2px;
+   height: 85px;
+
+   transform: translateY(-50%);
+
+   background-color: var(--accent-color);
+
+   box-shadow: 0 0 8px 2px var(--accent-color);
+}
+
+/* =========================
+   MAIN / HERO
+========================= */
+
+main {
+   width: 100%;
+}
+
+.hero {
+   width: min(1200px, 92%);
+
+   min-height: calc(100vh - 110px);
+
+   margin: 0 auto;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   padding: 90px 0 70px;
+
+   text-align: center;
+
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+   width: min(900px,100%);
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   direction: rtl;
+
+   text-align: center;
+}
+
+
+/* العنوان */
+
+.hero-content h1 {
+   margin: 0;
+
+   font-size: clamp(2.5rem, 5vw, 4.5rem);
+   font-weight: 800;
+
+   line-height: 1.2;
+
+   color: var(--text-main);
+
+   text-shadow:
+      0 0 8px rgba(255, 255, 255, 0.08);
+}
+
+
+/* المستوى التالي */
+
+.hero-content h1 span {
+   display: block;
+
+   color: var(--accent-color);
+
+   text-shadow:
+      0 0 4px var(--accent-color),
+      0 0 10px var(--accent-color);
+}
+
+
+/* الوصف */
+
+.hero-content p {
+   max-width: 600px;
+
+   margin: 25px 0 0;
+
+   font-size: 1.05rem;
+   line-height: 1.8;
+
+   color: var(--text-muted);
+   text-align: center;
+}
+
+/* =========================
+   STATUS CARD CONTAINER
+========================= */
+
+.status-card {
+   width: min(390px,100%);
+
+   height: 430px;
+
+   perspective: 900px;
+
+   margin-top: 70px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.status-card .card {
+   width: 100%;
+   height: 100%;
+
+   position: relative;
+
+   transform-style: preserve-3d;
+
+   transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+
+   cursor: pointer;
+}
+
+
+/* قلب الكارد */
+
+.status-card:hover .card {
+   transform: rotateY(180deg)
+              translateY(-18px)
+              translateZ(-60px);
+}
+
+
+/* =========================
+   CARD FACES
+========================= */
+
+.front-face,
+.back-face {
+   position: absolute;
+
+   inset: 0;
+
+   width: 100%;
+   height: 100%;
+
+   display: flex;
+   flex-direction: column;
+
+   justify-content: center;
+   align-items: center;
+
+   padding: 35px;
+
+   border: 1px solid var(--accent-color);
+   border-radius: 20px;
+
+   background:
+      linear-gradient(
+         145deg,
+         rgba(25, 30, 27, 0.95),
+         rgba(10, 10, 10, 0.92)
+      );
+
+   box-shadow:
+      0 0 20px rgba(0, 255, 100, 0.12),
+      inset 0 0 30px rgba(0, 255, 100, 0.04);
+
+   backdrop-filter: blur(12px);
+
+   backface-visibility: hidden;
+   -webkit-backface-visibility: hidden;
+}
+
+
+/* =========================
+   CARD GLOW
+========================= */
+
+.front-face::before,
+.back-face::before {
+   content: "";
+
+   position: absolute;
+
+   width: 140px;
+   height: 140px;
+
+   top: -70px;
+   right: -70px;
+
+   background: var(--accent-color);
+
+   opacity: 0.08;
+
+   filter: blur(50px);
+
+   border-radius: 50%;
+
+   pointer-events: none;
+}
+
+
+/* =========================
+   FRONT FACE
+========================= */
+
+.front-face {
+   gap: 28px;
+}
+
+
+/* =========================
+   BACK FACE
+========================= */
+
+.back-face {
+   transform: rotateY(180deg);
+
+   gap: 28px;
+}
+
+
+/* =========================
+   STAT ITEMS
+========================= */
+
+.frontf-items,
+.stat-items,
+.b-stat-items {
+   width: 100%;
+
+   text-align: center;
+}
+
+
+.frontf-items h3,
+.stat-items h3,
+.b-stat-items h3 {
+   margin: 0;
+
+   font-size: 2rem;
+   font-weight: 800;
+
+   color: var(--accent-color);
+
+   text-shadow:
+      0 0 8px var(--accent-color);
+}
+
+
+.frontf-items p,
+.stat-items p,
+.b-stat-items p {
+   margin: 6px 0 0;
+
+   font-size: 0.95rem;
+
+   color: var(--text-main);
+
+   opacity: 0.85;
+}
+
+
+/* =========================
+   CARD DIVIDERS
+========================= */
+
+.frontf-items:not(:last-child),
+.stat-items:not(:last-child),
+.b-stat-items:not(:last-child) {
+   padding-bottom: 22px;
+
+   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+   height: 70px;
+   width: 100%;
+   margin-top: auto;
+   padding: 40px 20px;
+   background-color: rgba(56, 59, 56, 0.75);
+   backdrop-filter: blur(12px);
+   border-top: 2px solid var(--accent-color);
+   border-radius: 10px;
+   box-shadow:
+      0 0 30px var(--accent-color),
+      inset 0 25px 20px -20px var(--accent-color);
+   animation: glow-footer 3s infinite alternate;
+}
+
+@keyframes glow-footer {
+   from {
+      box-shadow:
+         0 0 25px var(--accent-color),
+         inset 0 20px 15px -15px var(--accent-color);
+   }
+   to {
+      box-shadow:
+         0 0 35px var(--accent-color),
+         inset 0 25px 20px -20px var(--accent-color);
+   }
+}
+
+footer .container {
+   width: min(1200px, 92%);
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   direction: rtl;
+}
+
+footer p {
+   margin: -10px;
+   font-size: 0.95rem;
+   font-weight: 500;
+   color: var(--text-main);
+   text-align: center;
+   letter-spacing: 0.5px;
+   text-shadow: 0 0 3px var(--text-muted);
+   transition: color 0.3s ease;
+}
+
+footer p:hover {
+   color: var(--accent-color);
+   text-shadow:
+      0 0 8px var(--accent-color),
+      0 0 12px var(--accent-color);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* EXTRA LARGE SCREENS (1200px and above) */
+@media (min-width: 1200px) {
+   .navbar {
+      width: 100%;
+   }
+
+   .hero {
+      min-height: calc(100vh - 130px);
+   }
+
+   .hero-content h1 {
+      font-size: 4.5rem;
+   }
+
+   .status-card {
+      width: 420px;
+   }
+}

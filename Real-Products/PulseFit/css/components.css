@@ -1,0 +1,106 @@
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.btn-outline {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+
+   padding: 6px 10px;
+
+   font-size: 0.95rem;
+   font-weight: 600;
+
+   color: var(--accent-hover);
+
+   background-color: transparent;
+
+   border: 1px solid var(--accent-color);
+   border-radius: var(--radius-md);
+
+   cursor: pointer;
+
+   transition:
+      all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+   
+   position: relative;
+   right: -10px;
+}
+
+
+.btn-outline:hover {
+   background-color: var(--accent-hover);
+
+   color: var(--text-main);
+
+   border-color: var(--accent-hover);
+
+   box-shadow: 0 0 16px var(--accent-hover);
+
+   transform: translateY(-2px);
+}
+
+
+.btn-outline:active {
+   transform: translateY(0);
+}
+
+
+/* =========================
+   HERO BUTTON
+========================= */
+
+.hero-btn {
+   margin-top: 30px;
+}
+
+
+.btn-btn-primary {
+   display: inline-flex;
+
+   align-items: center;
+   justify-content: center;
+
+   padding: 12px 30px;
+
+   font-size: 1rem;
+   font-weight: 700;
+
+   color: #0d0d0d;
+
+   background-color: var(--accent-color);
+
+   border: 1px solid var(--accent-color);
+   border-radius: var(--radius-md);
+
+   text-decoration: none;
+
+   box-shadow:
+      0 0 10px var(--accent-color),
+      0 0 20px rgba(0, 255, 100, 0.15);
+
+   cursor: pointer;
+
+   transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      background-color 0.3s ease;
+}
+
+
+.btn-btn-primary:hover {
+   transform: translateY(-3px);
+
+   background-color: var(--accent-hover);
+
+   box-shadow:
+      0 0 18px var(--accent-color),
+      0 0 35px var(--accent-color);
+}
+
+
+.btn-btn-primary:active {
+   transform: translateY(0);
+}
+
