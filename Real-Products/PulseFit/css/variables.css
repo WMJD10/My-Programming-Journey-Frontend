@@ -1,0 +1,18 @@
+:root {
+   --pg-primary: #131313;
+   --pg-secondary: #080808;
+   --pg-card: #363636;
+
+   --accent-color: #88ff00;
+   --accent-hover: #63b900;
+
+   --text-main:#ffffff;
+   --text-muted: #a0a0a0;
+   
+   --border-color: #141414;
+   --radius-sm: 8px;
+   --radius-md: 12px;
+
+   --font-main: 'Segoe UI',  'Tajawal';
+
+}
