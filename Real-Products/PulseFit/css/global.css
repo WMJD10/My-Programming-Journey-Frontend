@@ -1,10 +1,10 @@
-body {
+html,body {
    background-color: var(--pg-primary);
    color: var(--text-main);
    font-family: var(--font-main);
    line-height: 1.6;
-   min-height: 100vh;
    overflow-x: hidden;
+   width: 100%;
 }
 
 *,
