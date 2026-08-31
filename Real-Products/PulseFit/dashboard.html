@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+   <meta charset="UTF-8">
+
+   <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+   >
+
+   <title>PulseFit | لوحة التحكم</title>
+
+   <!-- Font Awesome -->
+   <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+   >
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+   <!-- CSS -->
+   <link rel="stylesheet" href="css/variables.css">
+   <link rel="stylesheet" href="css/global.css">
+   <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+
+<body>
+
+
+   <!-- =====================================================
+        DASHBOARD LAYOUT
+   ====================================================== -->
+
+   <div class="dashboard-layout">
+
+
+      <!-- =================================================
+           SIDEBAR
+      ================================================== -->
+
+      <aside class="sidebar">
+
+
+         <!-- Sidebar Header -->
+
+         <div class="sidebar-header">
+
+            <a href="index.html" class="sidebar-logo">
+
+               <span>Pulse</span>Fit
+
+            </a>
+
+         </div>
+
+
+         <!-- User Profile -->
+
+         <div class="sidebar-user">
+
+            <div class="user-avatar">
+
+               <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div class="user-info">
+
+               <strong>أهلاً، أحمد</strong>
+
+               <span>عضو Pro</span>
+
+            </div>
+
+         </div>
+
+
+         <!-- Navigation -->
+
+         <nav class="sidebar-nav">
+
+            <p class="nav-title">
+               القائمة الرئيسية
+            </p>
+
+
+            <ul>
+
+
+               <li class="active">
+
+                  <a href="#">
+
+                     <i class="fa-solid fa-chart-pie"></i>
+
+                     <span>لوحة التحكم</span>
+
+                  </a>
+
+               </li>
+
+
+               <li>
+
+                  <a href="#workouts">
+
+                     <i class="fa-solid fa-dumbbell"></i>
+
+                     <span>التمارين</span>
+
+                  </a>
+
+               </li>
+
+
+               <li>
+
+                  <a href="#analytics">
+
+                     <i class="fa-solid fa-chart-line"></i>
+
+                     <span>الإحصائيات</span>
+
+                  </a>
+
+               </li>
+
+
+               <li>
+
+                  <a href="#progress">
+
+                     <i class="fa-solid fa-arrow-trend-up"></i>
+
+                     <span>التقدم</span>
+
+                  </a>
+
+               </li>
+
+
+            </ul>
+
+
+            <p class="nav-title nav-title-secondary">
+               الحساب
+            </p>
+
+
+            <ul>
+
+
+               <li>
+
+                  <a href="#settings">
+
+                     <i class="fa-solid fa-gear"></i>
+
+                     <span>الإعدادات</span>
+
+                  </a>
+
+               </li>
+
+
+               <li>
+
+                  <a href="login.html">
+
+                     <i class="fa-solid fa-right-from-bracket"></i>
+
+                     <span>تسجيل الخروج</span>
+
+                  </a>
+
+               </li>
+
+
+            </ul>
+
+         </nav>
+
+
+         <!-- Sidebar Bottom -->
+
+         <div class="sidebar-bottom">
+
+            <div class="sidebar-help">
+
+               <div class="help-icon">
+
+                  <i class="fa-solid fa-headset"></i>
+
+               </div>
+
+               <div>
+
+                  <strong>تحتاج مساعدة؟</strong>
+
+                  <span>تواصل مع الدعم</span>
+
+               </div>
+
+            </div>
+
+         </div>
+
+
+      </aside>
+
+
+
+      <!-- =================================================
+           MAIN CONTENT
+      ================================================== -->
+
+      <main class="dashboard-main">
+
+
+         <!-- =============================================
+              TOPBAR
+         ============================================== -->
+
+         <header class="dashboard-topbar">
+
+
+            <div class="topbar-title">
+
+               <span class="page-label">
+                  لوحة التحكم
+               </span>
+
+               <h1>
+                  مرحباً بعودتك، أحمد 👋
+               </h1>
+
+               <p>
+                  جاهز تكسر أرقامك اليوم؟
+               </p>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+
+               <!-- Notification -->
+
+               <button
+                  class="notification-btn"
+                  type="button"
+                  aria-label="الإشعارات"
+               >
+
+                  <i class="fa-regular fa-bell"></i>
+
+                  <span class="notification-dot"></span>
+
+               </button>
+
+
+               <!-- Profile -->
+
+               <button
+                  class="profile-button"
+                  type="button"
+               >
+
+                  <div class="profile-avatar">
+
+                     <i class="fa-solid fa-user"></i>
+
+                  </div>
+
+                  <div class="profile-info">
+
+                     <strong>أحمد</strong>
+
+                     <span>Pro Member</span>
+
+                  </div>
+
+                  <i class="fa-solid fa-chevron-down"></i>
+
+               </button>
+
+            </div>
+
+         </header>
+
+
+
+         <!-- =============================================
+              QUICK STATS
+         ============================================== -->
+
+         <section class="stats-section">
+
+
+            <div class="section-heading-small">
+
+               <div>
+
+                  <span class="section-label">
+                     نظرة سريعة
+                  </span>
+
+                  <h2>
+                     إحصائياتك
+                     <span class="stats-period">
+                        هذا الشهر
+                     </span>
+                  </h2>
+
+               </div>
+
+
+            </div>
+
+
+            <div class="stats-grid">
+
+
+               <!-- Stat 01 -->
+
+               <article class="stat-card">
+
+                  <div class="stat-card-top">
+
+                     <div class="stat-icon">
+
+                        <i class="fa-solid fa-fire"></i>
+
+                     </div>
+
+                     <span class="stat-change positive">
+
+                        <i class="fa-solid fa-arrow-up"></i>
+
+                        12.5%
+
+                     </span>
+
+                  </div>
+
+                  <div class="stat-content">
+
+                     <span>السعرات المحروقة</span>
+
+                     <strong>12,840</strong>
+
+                     <small>
+                        سعرة حرارية
+                     </small>
+
+                  </div>
+
+               </article>
+
+
+
+               <!-- Stat 02 -->
+
+               <article class="stat-card">
+
+                  <div class="stat-card-top">
+
+                     <div class="stat-icon">
+
+                        <i class="fa-solid fa-dumbbell"></i>
+
+                     </div>
+
+                     <span class="stat-change positive">
+
+                        <i class="fa-solid fa-arrow-up"></i>
+
+                        8.2%
+
+                     </span>
+
+                  </div>
+
+                  <div class="stat-content">
+
+                     <span>التمارين المكتملة</span>
+
+                     <strong>28</strong>
+
+                     <small>
+                        تمرين هذا الشهر
+                     </small>
+
+                  </div>
+
+               </article>
+
+
+
+               <!-- Stat 03 -->
+
+               <article class="stat-card">
+
+                  <div class="stat-card-top">
+
+                     <div class="stat-icon">
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                     </div>
+
+                     <span class="stat-change positive">
+
+                        مستمر
+
+                     </span>
+
+                  </div>
+
+                  <div class="stat-content">
+
+                     <span>أيام التتبع المتتالية</span>
+
+                     <strong>14</strong>
+
+                     <small>
+                        يوم متواصل 🔥
+                     </small>
+
+                  </div>
+
+               </article>
+
+
+
+               <!-- Stat 04 -->
+
+               <article class="stat-card">
+
+                  <div class="stat-card-top">
+
+                     <div class="stat-icon">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                     </div>
+
+                     <span class="stat-change">
+
+                        هذا الشهر
+
+                     </span>
+
+                  </div>
+
+                  <div class="stat-content">
+
+                     <span>وقت التدريب</span>
+
+                     <strong>18.5</strong>
+
+                     <small>
+                        ساعة
+                     </small>
+
+                  </div>
+
+               </article>
+
+
+            </div>
+
+         </section>
+
+
+
+         <!-- =============================================
+              DASHBOARD GRID
+         ============================================== -->
+
+         <div class="dashboard-grid">
+
+
+            <!-- =========================================
+                 DAILY WORKOUT
+            ========================================== -->
+
+            <section
+               class="dashboard-card workout-card"
+               id="workouts"
+            >
+
+
+               <div class="card-header">
+
+                  <div>
+
+                     <span class="section-label">
+                        خطة اليوم
+                     </span>
+
+                     <h2>
+                        تمارين اليوم
+                     </h2>
+
+                  </div>
+
+                  <a href="#" class="view-all">
+                     عرض الكل
+                     <i class="fa-solid fa-arrow-left"></i>
+                  </a>
+
+               </div>
+
+
+               <!-- Workout Progress -->
+
+               <div class="workout-progress">
+
+                  <div class="progress-info">
+
+                     <span>
+                        تقدم التمرين
+                     </span>
+
+                     <strong>
+                        3 / 5
+                     </strong>
+
+                  </div>
+
+                  <div class="progress-track">
+
+                     <span style="width: 60%;"></span>
+
+                  </div>
+
+               </div>
+
+
+
+               <!-- Exercises -->
+
+               <div class="exercise-list">
+
+
+                  <!-- Exercise 01 -->
+
+                  <div class="exercise-item completed">
+
+                     <div class="exercise-check">
+
+                        <i class="fa-solid fa-check"></i>
+
+                     </div>
+
+                     <div class="exercise-info">
+
+                        <strong>
+                           Push Ups
+                        </strong>
+
+                        <span>
+                           4 Sets × 15 Reps
+                        </span>
+
+                     </div>
+
+                     <span class="exercise-status">
+                        مكتمل
+                     </span>
+
+                  </div>
+
+
+
+                  <!-- Exercise 02 -->
+
+                  <div class="exercise-item completed">
+
+                     <div class="exercise-check">
+
+                        <i class="fa-solid fa-check"></i>
+
+                     </div>
+
+                     <div class="exercise-info">
+
+                        <strong>
+                           Pull Ups
+                        </strong>
+
+                        <span>
+                           4 Sets × 10 Reps
+                        </span>
+
+                     </div>
+
+                     <span class="exercise-status">
+                        مكتمل
+                     </span>
+
+                  </div>
+
+
+
+                  <!-- Exercise 03 -->
+
+                  <div class="exercise-item completed">
+
+                     <div class="exercise-check">
+
+                        <i class="fa-solid fa-check"></i>
+
+                     </div>
+
+                     <div class="exercise-info">
+
+                        <strong>
+                           Bodyweight Squats
+                        </strong>
+
+                        <span>
+                           3 Sets × 20 Reps
+                        </span>
+
+                     </div>
+
+                     <span class="exercise-status">
+                        مكتمل
+                     </span>
+
+                  </div>
+
+
+
+                  <!-- Exercise 04 -->
+
+                  <div class="exercise-item current">
+
+                     <div class="exercise-check">
+
+                        <i class="fa-solid fa-play"></i>
+
+                     </div>
+
+                     <div class="exercise-info">
+
+                        <strong>
+                           Plank
+                        </strong>
+
+                        <span>
+                           3 Sets × 60 Seconds
+                        </span>
+
+                     </div>
+
+                     <span class="exercise-status">
+                        الآن
+                     </span>
+
+                  </div>
+
+
+
+                  <!-- Exercise 05 -->
+
+                  <div class="exercise-item">
+
+                     <div class="exercise-check">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                     </div>
+
+                     <div class="exercise-info">
+
+                        <strong>
+                           Mountain Climbers
+                        </strong>
+
+                        <span>
+                           3 Sets × 20 Reps
+                        </span>
+
+                     </div>
+
+                     <span class="exercise-status">
+                        قادم
+                     </span>
+
+                  </div>
+
+
+               </div>
+
+
+               <!-- Start Button -->
+
+               <button
+                  type="button"
+                  class="start-workout-btn"
+               >
+
+                  <i class="fa-solid fa-play"></i>
+
+                  ابدأ التمرين
+
+               </button>
+
+
+            </section>
+
+
+
+            <!-- =========================================
+                 WEEKLY ACTIVITY
+            ========================================== -->
+
+            <section
+               class="dashboard-card activity-card"
+               id="analytics"
+            >
+
+
+               <div class="card-header">
+
+                  <div>
+
+                     <span class="section-label">
+                        نشاطك
+                     </span>
+
+                     <h2>
+                        النشاط الأسبوعي
+                     </h2>
+
+                  </div>
+
+                  <button
+                     type="button"
+                     class="card-menu"
+                     aria-label="المزيد"
+                  >
+
+                     <i class="fa-solid fa-ellipsis"></i>
+
+                  </button>
+
+               </div>
+
+
+               <!-- Activity Summary -->
+
+               <div class="activity-summary">
+
+                  <div>
+
+                     <strong>
+                        6.4
+                     </strong>
+
+                     <span>
+                        ساعات التدريب
+                     </span>
+
+                  </div>
+
+                  <div>
+
+                     <strong>
+                        +18%
+                     </strong>
+
+                     <span>
+                        مقارنة بالأسبوع الماضي
+                     </span>
+
+                  </div>
+
+               </div>
+
+
+               <!-- Fake Chart -->
+
+               <div class="activity-chart">
+
+
+                  <div class="chart-grid">
+
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+
+                  </div>
+
+
+                  <div class="chart-bars">
+
+                     <div class="chart-day">
+
+                        <div
+                           class="bar"
+                           style="height: 45%;"
+                        ></div>
+
+                        <span>السبت</span>
+
+                     </div>
+
+
+                     <div class="chart-day">
+
+                        <div
+                           class="bar"
+                           style="height: 70%;"
+                        ></div>
+
+                        <span>الأحد</span>
+
+                     </div>
+
+
+                     <div class="chart-day">
+
+                        <div
+                           class="bar"
+                           style="height: 55%;"
+                        ></div>
+
+                        <span>الإثنين</span>
+
+                     </div>
+
+
+                     <div class="chart-day">
+
+                        <div
+                           class="bar"
+                           style="height: 85%;"
+                        ></div>
+
+                        <span>الثلاثاء</span>
+
+                     </div>
+
+
+                     <div class="chart-day">
+
+                        <div
+                           class="bar"
+                           style="height: 60%;"
+                        ></div>
+
+                        <span>الأربعاء</span>
+
+                     </div>
+
+
+                     <div class="chart-day">
+
+                        <div
+                           class="bar active"
+                           style="height: 95%;"
+                        ></div>
+
+                        <span>الخميس</span>
+
+                     </div>
+
+
+                     <div class="chart-day">
+
+                        <div
+                           class="bar"
+                           style="height: 35%;"
+                        ></div>
+
+                        <span>الجمعة</span>
+
+                     </div>
+
+                  </div>
+
+               </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 GOALS / PROGRESS
+            ========================================== -->
+
+            <section
+               class="dashboard-card progress-card"
+               id="progress"
+            >
+
+
+               <div class="card-header">
+
+                  <div>
+
+                     <span class="section-label">
+                        أهدافك
+                     </span>
+
+                     <h2>
+                        مستوى تقدمك
+                     </h2>
+
+                  </div>
+
+                  <a href="#" class="view-all">
+                     التفاصيل
+                     <i class="fa-solid fa-arrow-left"></i>
+                  </a>
+
+               </div>
+
+
+               <div class="progress-content">
+
+
+                  <!-- Circular Progress -->
+
+                  <div class="progress-circle">
+
+                     <div class="circle-inner">
+
+                        <strong>
+                           78%
+                        </strong>
+
+                        <span>
+                           مكتمل
+                        </span>
+
+                     </div>
+
+                  </div>
+
+
+                  <!-- Progress Info -->
+
+                  <div class="progress-details">
+
+                     <div class="goal-item">
+
+                        <div>
+
+                           <span>
+                              القوة
+                           </span>
+
+                           <strong>
+                              85%
+                           </strong>
+
+                        </div>
+
+                        <div class="mini-progress">
+
+                           <span style="width: 85%;"></span>
+
+                        </div>
+
+                     </div>
+
+
+                     <div class="goal-item">
+
+                        <div>
+
+                           <span>
+                              اللياقة
+                           </span>
+
+                           <strong>
+                              72%
+                           </strong>
+
+                        </div>
+
+                        <div class="mini-progress">
+
+                           <span style="width: 72%;"></span>
+
+                        </div>
+
+                     </div>
+
+
+                     <div class="goal-item">
+
+                        <div>
+
+                           <span>
+                              التحمل
+                           </span>
+
+                           <strong>
+                              76%
+                           </strong>
+
+                        </div>
+
+                        <div class="mini-progress">
+
+                           <span style="width: 76%;"></span>
+
+                        </div>
+
+                     </div>
+
+                  </div>
+
+               </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 PERSONAL RECORD
+            ========================================== -->
+
+            <section class="dashboard-card record-card">
+
+
+               <div class="record-icon">
+
+                  <i class="fa-solid fa-trophy"></i>
+
+               </div>
+
+
+               <span class="section-label">
+                  آخر إنجاز
+               </span>
+
+
+               <h2>
+                  رقم قياسي جديد! 🏆
+               </h2>
+
+
+               <p>
+                  لقد حققت أفضل أداء لك في تمرين
+                  <strong>Pull Ups</strong>
+               </p>
+
+
+               <div class="record-value">
+
+                  <strong>
+                     16
+                  </strong>
+
+                  <span>
+                     تكرار
+                  </span>
+
+               </div>
+
+
+               <a href="#" class="record-link">
+
+                  عرض جميع الإنجازات
+
+                  <i class="fa-solid fa-arrow-left"></i>
+
+               </a>
+
+            </section>
+
+
+         </div>
+
+
+
+         <!-- =============================================
+              TODAY SUMMARY
+         ============================================== -->
+
+         <section class="today-summary">
+
+
+            <div class="summary-header">
+
+               <div>
+
+                  <span class="section-label">
+                     ملخص اليوم
+                  </span>
+
+                  <h2>
+                     استمر بنفس القوة 🔥
+                  </h2>
+
+               </div>
+
+               <span class="summary-date">
+                  الإثنين، 31 أغسطس 2026
+               </span>
+
+            </div>
+
+
+            <div class="summary-items">
+
+
+               <div class="summary-item">
+
+                  <div class="summary-icon">
+
+                     <i class="fa-solid fa-fire"></i>
+
+                  </div>
+
+                  <div>
+
+                     <strong>420</strong>
+
+                     <span>سعرة محروقة</span>
+
+                  </div>
+
+               </div>
+
+
+               <div class="summary-item">
+
+                  <div class="summary-icon">
+
+                     <i class="fa-solid fa-stopwatch"></i>
+
+                  </div>
+
+                  <div>
+
+                     <strong>42</strong>
+
+                     <span>دقيقة تدريب</span>
+
+                  </div>
+
+               </div>
+
+
+               <div class="summary-item">
+
+                  <div class="summary-icon">
+
+                     <i class="fa-solid fa-list-check"></i>
+
+                  </div>
+
+                  <div>
+
+                     <strong>3 / 5</strong>
+
+                     <span>تمارين مكتملة</span>
+
+                  </div>
+
+               </div>
+
+
+               <div class="summary-item">
+
+                  <div class="summary-icon">
+
+                     <i class="fa-solid fa-bullseye"></i>
+
+                  </div>
+
+                  <div>
+
+                     <strong>78%</strong>
+
+                     <span>هدفك اليومي</span>
+
+                  </div>
+
+               </div>
+
+
+            </div>
+
+         </section>
+
+
+
+      </main>
+
+   </div>
+
+
+</body>
+
+</html>
