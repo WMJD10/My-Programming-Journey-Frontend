@@ -12,7 +12,7 @@ PulseFit is a localized, performance-focused platform with native RTL support an
 
 ---
 
-## Market Reach
+## Market Reach (demo)
 
 - **50,000+** active users
 - **12,500+** monthly subscriptions
@@ -49,7 +49,7 @@ Weekly charts monitor:
 - Fitness
 - Endurance
 
-**Pricing**
+**Pricing** (demo)
 
 | Plan | Price | Features |
 | --- | --- | --- |
