@@ -1,0 +1,8 @@
+{
+  "string": "Elz",
+  "number": 100,
+  "object": { "EG": "GIza", "KSA": "Riyadh" },
+  "Array": ["html", "css", "js"],
+  "boolean": true,
+  "null": null
+}
