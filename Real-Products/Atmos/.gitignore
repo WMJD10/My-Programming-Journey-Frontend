@@ -1,0 +1,19 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Temporary Files
+*.swp
+*.swo
+*~
+
+# Logs and Temporary Files
+*.log
+*.tmp
+*.bak
+
+# Environment Variables and Secrets
+.env
+.env.*
+!.env.example

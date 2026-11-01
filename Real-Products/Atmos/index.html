@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+   <head>
+
+      <meta charset="UTF-8">
+      <meta name="viewport" 
+      content="width=device-width, initial-scale=1.0">
+      <meta name="theme-color"
+      content="#080d19">
+      
+      <title>Atmos</title>
+      <link rel="stylesheet" href="style.css">
+
+      <script src="JS/data.js" defer></script>
+      <script src="JS/api.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.1.0/fuse.min.js?utm_source=chatgpt.com" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" defer></script>
+      <script src="JS/app.js" defer></script>
+
+   </head>
+
+   <body>
+
+      <header class="topBar">
+         
+         <a href="" class="brand">
+            <span class="brand-name">Atmos</span>
+            <span class="brand-tagline">your calm weather companion</span>
+         </a>
+
+         <div class="search-container">
+            <form class="search-form" id="search-form">
+               <span class="search-icon" aria-hidden="true">⌕</span>
+
+               <input
+                  type="search"
+                  name="city-search"
+                  id="city-search"
+                  placeholder="Search a city..."
+                  aria-label="Search for a city"
+                  autocomplete="off"
+                  aria-controls="city-results"
+                  aria-expanded="false"
+               >
+            </form>
+
+            <ul
+               class="city-results"
+               id="city-results"
+               role="listbox"
+               aria-label="City search results"
+               hidden
+            ></ul>
+         </div>
+
+         <div class="unit-toggle" aria-label="Temp-unit">
+         
+            <button type="button" class="unit-btn active" id="C-unit">°C</button>
+            
+            <button type="button" class="unit-btn" id="F-unit">°F</button>
+         
+         </div>
+
+      </header>
+
+      <main class="dashboard">
+
+         <div class="top-weather-grid">
+
+            <section class="current-weather">
+                        <div class="weather-location">
+
+                     <div>
+                        
+                        <p class="location-label">CURRENT LOCATION</p>
+                        
+                        <h1 class="city-name">Erbil, Iraq</h1>
+                        
+                        <p class="weather-date">Saturday, October 10</p>
+                     
+                     </div>
+
+                  </div>
+
+                  <div class="current-weather-content">
+
+                     <div class="temperature-info">
+                        
+                        <p class="weather-condition">Partly Cloudy</p>
+
+                        <div class="temperature">
+                           28<span>°</span>
+                        </div>
+
+                        <p class="feels-like">Feels like 30°</p>
+
+                        <div class="temperature-range">
+                        
+                           <span>H: 31°</span>
+                        
+                           <span>L: 21°</span>
+                        
+                        </div>
+                     
+                     </div>
+
+                     <div class="weather-visual" aria-hidden="true">
+                     
+                        <img
+                           class="weather-emoji current-iconW"
+                           src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                           alt="Current weather"
+                        >
+                     
+                     </div>
+
+                  </div>
+
+            </section>
+
+            <section class="sun-card">
+
+               <h2 class="sun-card-title">Sunrise & Sunset</h2>
+
+               <div class="sun-event">
+               
+                  <div class="sun-icon sunrise-icon">↑</div>
+               
+                  <div>
+                  
+                     <p class="sun-label">Sunrise</p>
+                     <p class="sun-time sunrise-time">6:12 AM</p>
+                  
+                  </div>
+                  
+               </div>
+
+               <div class="sun-divider"></div>
+
+               <div class="sun-event">
+               
+                  <div class="sun-icon sunset-icon">↓</div>
+
+                  <div>
+                  
+                     <p class="sun-label">Sunset</p>
+                     <p class="sun-time sunset-time">5:42 PM</p>
+
+                  </div>
+
+               </div>
+
+               <div class="daylight-info">
+               
+                  <p class="sun-label">Total daylight</p>
+                  <p class="daylight-time">11h 30m</p>
+               
+               </div>
+
+            </section>
+
+         </div>
+
+
+         <section class="weather-metrics">
+
+            <article class="metric-card">
+            
+               <div class="metric-heading">
+            
+                  <span class="metric-icon humidity-icon">💧</span>
+            
+                  <h2>Humidity</h2>
+            
+               </div>
+            
+               <p class="metric-value">35<span>%</span></p>
+               <p class="metric-description">Comfortable level</p>
+            
+            </article>
+
+            <article class="metric-card">
+            
+               <div class="metric-heading">
+            
+                  <span class="metric-icon wind-icon">≋</span>
+            
+                  <h2>Wind Speed</h2>
+            
+               </div>
+            
+               <p class="metric-value">12 <span>km/h</span></p>
+               <p class="metric-description">Light breeze</p>
+            
+            </article>
+
+            <article class="metric-card">
+            
+               <div class="metric-heading">
+            
+                  <span class="metric-icon uv-icon">☀</span>
+            
+                  <h2>UV Index</h2>
+            
+               </div>
+            
+               <p class="metric-value">5 <span>/ 11</span></p>
+               <p class="metric-description">Moderate</p>
+            
+            </article>
+
+            <article class="metric-card">
+            
+               <div class="metric-heading">
+                  
+                  <span class="metric-icon visibility-icon">◉</span>
+                  
+                  <h2>Visibility</h2>
+               
+               </div>
+               
+               <p class="metric-value">--- <span>km</span></p>
+               <p class="metric-description">Clear conditions</p>
+            
+            </article>
+
+         </section>
+
+
+         <section class="hourly-section">
+
+            <div class="section-heading">
+               
+               <div>
+                  
+                  <h2>Hourly Forecast</h2>
+                  <p>Weather changes throughout the day</p>
+               
+               </div>
+
+               <span class="forecast-label">NEXT 6 HOURS</span>
+            
+            </div>
+
+            <div class="hourly-list">
+
+               <article class="hourly-card active">
+               
+                  <p class="hourly-time">Now</p>
+                  <img
+                     class="weather-emoji hourly-icon"
+                     src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                     alt="Current weather"
+                  >
+                  <p class="hourly-temp">28°</p>
+                  <p class="hourly-rain">10% rain</p>
+               
+               </article>
+
+               <article class="hourly-card">
+               
+                  <p class="hourly-time">1 PM</p>
+                  <img
+                     class="weather-emoji hourly-icon"
+                     src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                     alt="Current weather"
+                  >
+                  <p class="hourly-temp">29°</p>
+                  <p class="hourly-rain">0% rain</p>
+               
+               </article>
+
+               <article class="hourly-card">
+               
+                  <p class="hourly-time">2 PM</p>
+                  <img
+                     class="weather-emoji  hourly-icon"
+                     src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                     alt="Current weather"
+                  >
+                  <p class="hourly-temp">30°</p>
+                  <p class="hourly-rain">0% rain</p>
+               
+               </article>
+
+               <article class="hourly-card">
+               
+                  <p class="hourly-time">3 PM</p>
+                  <img
+                     class="weather-emoji hourly-icon"
+                     src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                     alt="Current weather"
+                  >
+                  <p class="hourly-temp">29°</p>
+                  <p class="hourly-rain">5% rain</p>
+               
+               </article>
+
+               <article class="hourly-card">
+               
+                  <p class="hourly-time">4 PM</p>
+                  <img
+                     class="weather-emoji hourly-icon"
+                     src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                     alt="Current weather"
+                  >
+                  <p class="hourly-temp">27°</p>
+                  <p class="hourly-rain">10% rain</p>
+               
+               </article>
+
+               <article class="hourly-card">
+               
+                  <p class="hourly-time">5 PM</p>
+                  <img
+                     class="weather-emoji hourly-icon"
+                     src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                     alt="Current weather"
+                  >
+                  <p class="hourly-temp">25°</p>
+                  <p class="hourly-rain">15% rain</p>
+               
+               </article>
+
+               <article class="hourly-card">
+               
+                  <p class="hourly-time">6 PM</p>
+                  <img
+                     class="weather-emoji hourly-icon"
+                     src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                     alt="Current weather"
+                  >
+                  <p class="hourly-temp">23°</p>
+                  <p class="hourly-rain">5% rain</p>
+               
+               </article>
+
+            </div>
+
+         </section>
+
+
+         <section class="weekly-section">
+            
+            <div class="section-heading">
+               
+               <div>
+                  <h2>7-Day Forecast</h2>
+                  <p>The week ahead at a glance</p>
+               </div>
+               <span class="forecast-label">NEXT 7 DAYS</span>
+            
+            </div>
+
+            <div class="weekly-list">
+               
+               <article class="weekly-row today">
+                  
+                  <p class="weekly-day">Today</p>
+                  <img
+                     class="weather-emoji weekly-icon"
+                     src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                     alt="Current weather"
+                  >
+                  <p class="weekly-condition">Partly cloudy</p>
+                  
+                  <div class="weekly-temperatures">
+                     <span class="weekly-low">21°</span>
+                     
+                     <div class="temperature-bar">
+                        <span></span>
+                     </div>
+                     
+                     <span class="weekly-high">31°</span>
+                  </div>
+               
+               </article>
+
+               <article class="weekly-row">
+                  
+                  <p class="weekly-day">Sun</p>
+                  <img
+                     class="weather-emoji weekly-icon"
+                     src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                     alt="Current weather"
+                  >
+                  <p class="weekly-condition">Sunny</p>
+                  
+                  <div class="weekly-temperatures">
+                     <span class="weekly-low">22°</span>
+                     
+                     <div class="temperature-bar">
+                        <span></span>
+                     </div>
+                     
+                     <span class="weekly-high">33°</span>
+                  </div>
+               
+               </article>
+
+               <article class="weekly-row">
+                  
+                  <p class="weekly-day">Mon</p>
+                  <img
+                     class="weather-emoji weekly-icon"
+                     src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                     alt="Current weather"
+                  >
+                  <p class="weekly-condition">Partly cloudy</p>
+                  
+                  <div class="weekly-temperatures">
+                     <span class="weekly-low">20°</span>
+                     
+                     <div class="temperature-bar">
+                        <span></span>
+                     </div>
+                     
+                     <span class="weekly-high">30°</span>
+                  </div>
+               
+               </article>
+
+               <article class="weekly-row">
+               
+                  <p class="weekly-day">Tue</p>
+                  <img
+                     class="weather-emoji weekly-icon"
+                     src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                     alt="Current weather"
+                  >
+                  <p class="weekly-condition">Cloudy</p>
+                  
+                  <div class="weekly-temperatures">
+                     <span class="weekly-low">19°</span>
+                     
+                     <div class="temperature-bar">
+                        <span></span>
+                     </div>
+                     
+                     <span class="weekly-high">28°</span>
+                  </div>
+               
+               </article>
+
+               <article class="weekly-row">
+                  
+                  <p class="weekly-day">Wed</p>
+                  <img
+                     class="weather-emoji weekly-icon"
+                     src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                     alt="Current weather"
+                  >
+                  <p class="weekly-condition">Light rain</p>
+                  
+                  <div class="weekly-temperatures">
+                     <span class="weekly-low">18°</span>
+                     
+                     <div class="temperature-bar">
+                        <span></span>
+                     </div>
+                     
+                     <span class="weekly-high">25°</span>
+                  </div>
+               
+               </article>
+
+               <article class="weekly-row">
+                  
+                  <p class="weekly-day">Thu</p>
+                  <img
+                     class="weather-emoji weekly-icon"
+                     src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                     alt="Current weather"
+                  >
+                  <p class="weekly-condition">Partly cloudy</p>
+                  <div class="weekly-temperatures">
+                     <span class="weekly-low">20°</span>
+                     
+                     <div class="temperature-bar">
+                        <span></span>
+                     </div>
+                     
+                     <span class="weekly-high">29°</span>
+                  </div>
+               
+               </article>
+
+               <article class="weekly-row">
+                  
+                  <p class="weekly-day">Fri</p>
+                  <img
+                     class="weather-emoji weekly-icon"
+                     src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-night.svg"
+                     alt="Current weather"
+                  >
+                  <p class="weekly-condition">Sunny</p>
+                  
+                  <div class="weekly-temperatures">
+                     <span class="weekly-low">21°</span>
+                     
+                     <div class="temperature-bar">
+                        <span></span>
+                     </div>
+                     
+                     <span class="weekly-high">32°</span>
+                  </div>
+               
+               </article>
+            
+            </div>
+         
+         </section>
+
+
+         <section class="temperature-trend">
+
+            <div class="section-heading">
+               <div>
+                  <h2>Temperature Trend</h2>
+                  <p>How the temperature changes throughout the day</p>
+               </div>
+
+               <span class="forecast-label">TODAY</span>
+            </div>
+
+            <div class="chart-summary">
+               <div>
+                  <p class="chart-label">Today's temperature</p>
+                  <p class="chart-value">28° <span>Currently</span></p>
+               </div>
+
+               <div class="chart-range">
+                  <span>Low 21°</span>
+                  <span>High 31°</span>
+               </div>
+            </div>
+
+            <div class="chart-container">
+
+               <svg
+                  class="temperature-chart"
+                  viewBox="0 0 700 230"
+                  role="img"
+                  aria-label="Illustrative temperature trend, rising from 22 degrees in the morning to 31 degrees in the afternoon, then falling to 24 degrees at night"
+               >
+
+                  <defs>
+                  <linearGradient id="temperature-fill" x1="0" y1="0" x2="0" y2="1">
+                     <stop offset="0%" stop-color="#79aaff" stop-opacity="0.30" />
+                     <stop offset="100%" stop-color="#79aaff" stop-opacity="0" />
+                  </linearGradient>
+                  </defs>
+
+                  <!-- Horizontal grid lines -->
+                  <g class="chart-grid">
+                  <line x1="20" y1="35" x2="680" y2="35" />
+                  <line x1="20" y1="85" x2="680" y2="85" />
+                  <line x1="20" y1="135" x2="680" y2="135" />
+                  <line x1="20" y1="185" x2="680" y2="185" />
+                  </g>
+
+                  <!-- Area under the curve -->
+                  <path
+                  class="chart-area"
+                  d="M 30 165
+                     C 90 150, 115 110, 160 105
+                     S 240 70, 290 65
+                     S 380 30, 430 45
+                     S 520 95, 560 110
+                     S 635 145, 670 155
+                     L 670 195
+                     L 30 195 Z"
+                  />
+
+                  <!-- Temperature curve -->
+                  <path
+                  class="chart-line"
+                  d="M 30 165
+                     C 90 150, 115 110, 160 105
+                     S 240 70, 290 65
+                     S 380 30, 430 45
+                     S 520 95, 560 110
+                     S 635 145, 670 155"
+                  />
+
+                  <!-- Data points -->
+                  <g class="chart-points">
+                  <circle cx="30" cy="165" r="5" />
+                  <circle cx="160" cy="105" r="5" />
+                  <circle cx="290" cy="65" r="5" />
+                  <circle cx="430" cy="45" r="5" />
+                  <circle cx="560" cy="110" r="5" />
+                  <circle cx="670" cy="155" r="5" />
+                  </g>
+
+                  <!-- Temperature labels -->
+                  <g class="chart-temperatures">
+                  <text x="30" y="148">22°</text>
+                  <text x="160" y="88">25°</text>
+                  <text x="290" y="48">28°</text>
+                  <text x="430" y="27">31°</text>
+                  <text x="560" y="92">27°</text>
+                  <text x="670" y="137">24°</text>
+                  </g>
+
+                  <!-- Time labels -->
+                  <g class="chart-times">
+                  <text x="30" y="220">6 AM</text>
+                  <text x="160" y="220">9 AM</text>
+                  <text x="290" y="220">12 PM</text>
+                  <text x="430" y="220">3 PM</text>
+                  <text x="560" y="220">6 PM</text>
+                  <text x="670" y="220">9 PM</text>
+                  </g>
+
+               </svg>
+
+            </div>
+
+            <p class="chart-note">
+               Your 15-Hour Temperature Reference.
+            </p>
+
+         </section>
+
+      </main>
+      <footer class="footer">
+         <p style=" position: relative; left: 24px; ">Designed for calm, EveryDay planning | All rights reserved &copy; 2026 WMJD</p>
+      </footer>
+      
+   </body>
+
+</html>
