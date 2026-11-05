@@ -2,7 +2,7 @@
 
 I'll share My full journey in programming, from **ZERO to HERO**.
 **HERO = Full-Stack Development**.
-But for now, I need to become a **Frontend Developer**. 🚀
+But first, I need to become a **Frontend Developer**. 🚀
 
 ---
 
@@ -24,15 +24,25 @@ But for now, I need to become a **Frontend Developer**. 🚀
 ## Roadmap
 
   HTML → CSS → Git & GitHub → JavaScript → TypeScript → React → Node.js → Database → REST API → Authentication → Deployment → Full-Stack Development
+---
 
 
 ## Projects & Missions
 
   This repository contains my learning files, practice projects, missions, and projects created throughout my programming journey.
 
+### Featured Project
+
+**Atmos — Weather Dashboard**
+
+A responsive weather dashboard built with HTML, CSS, and JavaScript, powered by the Open-Meteo API.
+
+- **Repository:** https://github.com/WMJD10/Atmos
+- **Live Demo:** https://wmjd10.github.io/Atmos/
+
 ---
 
-### 1st Stage — HTML & CSS
+## 1st Stage — HTML & CSS
 
 - HTML & CSS Learning Cache
 - HTML Missions
@@ -43,15 +53,14 @@ But for now, I need to become a **Frontend Developer**. 🚀
 
 ---
 
-## Current Stage
-
-### 2nd Stage — JavaScript
+## 2nd Stage — JavaScript
 
 - JavaScript Learning Cache
 - JavaScript Challenges
 - JavaScript Practice Projects
+- Atmos — Weather Dashboard
 
-**Status:**  Practicing 🧑🏻‍💻
+**Status:**  Completed ✅
 
 ---
 
@@ -60,6 +69,7 @@ But for now, I need to become a **Frontend Developer**. 🚀
 ### 3rd Stage — TypeScript
 
 - TypeScript Learning Cache
-- TypeScript Practice Projects
 
 **Status:**  Upcoming ⏳
+
+**Note:** TypeScript will begin after completing the planned development and improvements of Atmos.
