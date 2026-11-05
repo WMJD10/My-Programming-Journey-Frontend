@@ -172,6 +172,10 @@ Atmos is an evolving project. Future updates may introduce additional features, 
 
 Built as part of a personal web development journey.
 
+## Live Demo
+
+- https://wmjd10.github.io/Atmos/
+
 ---
 
 *Designed for calm, everyday planning.*
